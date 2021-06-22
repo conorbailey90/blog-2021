@@ -5,13 +5,12 @@ firebase.auth().onAuthStateChanged((user) => {
         // https://firebase.google.com/docs/reference/js/firebase.User
         var uid = user.uid;
        
-        console.log(user)
         if(user.email !== 'conbailey90@gmail.com'){
             alert('Unauthorised');
-            window.location.href = 'index.html'
+            window.location.href = 'index.html';
             return;
         }
-        document.querySelector('.overlay').style.display = 'none'
+        document.querySelector('.overlay').style.display = 'none';
         // ...
     } else {
         // User is signed out
