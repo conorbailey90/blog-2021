@@ -164,6 +164,7 @@ h2 {
   transition: 0.5s;
   will-change: flex;
   overflow: hidden;
+  background-color: #131313;
 }
 
 .blog-post-row.active {
