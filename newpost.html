@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="js/fbUtils.js"></script>
+
+    <title>Create Blog Post</title>
+</head>
+<body>
+
+    <div class="overlay">
+       
+    </div>
+    <div class="menu">
+        <div class="close">
+            <div class="close-tog">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/newpost.html">Create Post</a></li>
+            <li class="sign-in"><a href="#" onclick="googleSignIn()">Google Sign In</a></li>
+            <li class="sign-out"><a href="#" onclick="signOut()">Sign Out</a></li>
+        </ul>
+    </div>
+
+    <div class="header">
+        <h2>BLOG - CONOR BAILEY</h2>
+        <div class="menu-tog">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <h1>Create Blog Post</h1>
+
+    <form id="post-form" action="">
+        <label for="">Post title</label></br>
+        <input type="text" name="" id="post-title" required></br>
+        <label for="">Post summary</label></br>
+        <input type="text" name="" id="post-summary" required></br>
+        <label for="">Post content</label></br>
+        <textarea name="" id="post-content" cols="30" rows="10"></textarea></br>
+        <label for="">Video link</label></br>
+        <input type="text" id="video-link"></br>
+        <label for="">Image link</label></br>
+        <input type="text" name="" id="image-link"></br>
+        <input type="submit">
+    </form>
+    
+
+    <script src="js/newPost.js" defer></script>
+    
+</body>
+</html>

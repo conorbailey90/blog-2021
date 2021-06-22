@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <!-- The core Firebase JS SDK is always required and must be listed first -->
+       <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+
+       <!-- TODO: Add SDKs for Firebase products that you want to use
+           https://firebase.google.com/docs/web/setup#available-libraries -->
+       <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+       <script src="js/fbUtils.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="menu">
+        <div class="close">
+            <div class="close-tog">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/newpost.html">Create Post</a></li>
+            <li class="sign-in"><a href="#" onclick="googleSignIn()">Google Sign In</a></li>
+            <li class="sign-out"><a href="#" onclick="signOut()">Sign Out</a></li>
+        </ul>
+    </div>
+
+    <div class="header">
+        <h2>BLOG - CONOR BAILEY</h2>
+        <div class="menu-tog">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <ul class="blog-list"></ul>
+
+
+
+    <script src="js/index.js" defer></script>
+    
+</body>
+</html>

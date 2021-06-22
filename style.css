@@ -1,0 +1,283 @@
+@font-face {
+  font-family: "Founders Grotesk";
+  src: url(./fonts/NeueHaasDisplay-Roman.0caa56d4.woff2) format("woff2");
+}
+
+html,
+body {
+  background-color: #131313;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Founders Grotesk";
+  font-weight: 100;
+  text-decoration: none;
+  color: white;
+  list-style: none;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #131313;
+  z-index: 100;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: #131313;
+  border-left: 1px solid #ffffff5a;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.menu.active {
+  right: 0;
+}
+
+.menu-tog {
+  width: 35px;
+  height: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+span {
+  background-color: #fcc42a;
+}
+
+a:hover,
+li:hover,
+li:hover div {
+  color: #fcc42a;
+  cursor: pointer;
+}
+.menu-tog span {
+  width: 100%;
+  height: 2px;
+}
+
+.menu-tog span:nth-child(2) {
+  width: 70%;
+  align-self: flex-end;
+  transition: 0.5s;
+}
+
+.menu-tog:hover span:nth-child(2) {
+  width: 100%;
+}
+
+.close {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 2vw;
+}
+
+.close-tog {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.close-tog span:nth-child(1) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 100%;
+  height: 2px;
+}
+
+.close-tog span:nth-child(2) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 100%;
+  height: 2px;
+}
+
+.menu ul {
+  position: absolute;
+  top: 50px;
+  left: 10%;
+  width: 80%;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.sign-in,
+.sign-out {
+  display: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  padding: 0 2vw;
+  background-color: #131313;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h2 {
+  font-size: 18px;
+  color: #fcc42a;
+}
+
+.blog-list {
+  position: absolute;
+  top: 30vh;
+  left: 2vw;
+  width: 96vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60vh;
+  border-top: 1px solid rgba(255, 255, 255, 0.2221);
+}
+
+.blog-post-row {
+  position: relative;
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.221);
+  transition: 0.5s;
+  will-change: flex;
+  overflow: hidden;
+}
+
+.blog-post-row.active {
+  flex: 6;
+}
+
+.row-container-one {
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  /* align-items: center; */
+}
+
+.row-container-two {
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  transition: 0.5s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.blog-post-row.active .row-container-one {
+  height: 30%;
+  opacity: 1;
+}
+
+.blog-post-row.active .row-container-two {
+  position: relative;
+  height: 70%;
+  opacity: 1;
+}
+
+.post-image-inner {
+  /* padding: 1rem; */
+  width: 300px;
+  height: calc(300 * 0.5625px);
+  background-size: cover;
+  background-position: center;
+}
+
+.post-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  left: 2%;
+  width: 96%;
+  top: 50px;
+}
+
+.post-section > div,
+iframe {
+  margin: 1rem 0;
+}
+
+.post-container {
+  width: 100%;
+  justify-content: space-between;
+}
+
+iframe {
+  border: none;
+  align-self: center;
+  width: 60vw;
+  height: calc(60 * 0.5625vw);
+}
+
+/* Create Post */
+
+#post-form {
+  position: absolute;
+  top: 50px;
+  left: 2%;
+  width: 96%;
+}
+
+label {
+  font-size: 16px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+input,
+textarea {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.351);
+  margin: 1rem 0;
+  width: 100%;
+  min-height: 30px;
+  outline: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .blog-post-row {
+    font-size: 14px;
+  }
+  .post-image-inner {
+    /* padding: 1rem; */
+    width: 150px;
+    height: calc(150 * 0.5625px);
+    background-size: cover;
+    background-position: center;
+  }
+
+  iframe {
+    border: none;
+    align-self: center;
+    width: 90vw;
+    height: calc(90 * 0.5625vw);
+  }
+}
