@@ -16,7 +16,6 @@
     // Google sign in
 
     function googleSignIn(){
-      console.log('hello')
       let provider = new firebase.auth.GoogleAuthProvider();
 
       firebase.auth()
@@ -70,7 +69,7 @@
       } else {
           // User is signed out
           // ...
-          console.log('the bitch signed out')
+         
           document.querySelector('.sign-in').style.display = 'block'
           document.querySelector('.sign-out').style.display = 'none'
       }

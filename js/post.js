@@ -31,13 +31,13 @@ docRef.get().then((doc) => {
        
         document.title = title;
         let titleDiv = document.createElement('div');
-        titleDiv.innerHTML = `<h1>${title}</h1>`
+        titleDiv.innerText = `${title}`
 
         let postContainer = document.createElement('div');
         postContainer.classList.add('post-container');
 
         let contentDiv = document.createElement('div');
-        contentDiv.innerHTML = `<p>${content}</p>`;
+        contentDiv.innerText = `${content}`;
 
     
 

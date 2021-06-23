@@ -60,7 +60,6 @@ db.collection("posts").get().then((querySnapshot) => {
     });
 }).then(() => {
     blogPosts = [...document.querySelectorAll('.blog-post-row')];
-    console.log(blogPosts)
     blogPosts.forEach((post, idx) => {
         post.addEventListener('click', () => {
             post.classList.toggle('active');
