@@ -29,6 +29,7 @@ docRef.get().then((doc) => {
         // destructure the data object
         let {title, postDate, summary, image, content, video}  = data;
        
+        document.title = title;
         let titleDiv = document.createElement('div');
         titleDiv.innerHTML = `<h1>${title}</h1>`
 
