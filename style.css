@@ -263,6 +263,28 @@ textarea {
   outline: none;
 }
 
+.pagination {
+  position: absolute;
+  top: 90vh;
+  left: 2vw;
+  width: 96vw;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.next,
+.previous {
+  color: #fcc42a;
+}
+
+.next:hover,
+.previous:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 600px) {
   .blog-post-row {
     font-size: 14px;
