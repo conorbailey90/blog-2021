@@ -27,13 +27,13 @@
         </div>
         <ul>
             <li><a href="./index.html">Home</a></li>
-            <li><a href="./newpost.html">Create Post</a></li>
+            <li class="create-post"><a href="./newpost.html">Create Post</a></li>
             <li class="sign-in"><a href="#" onclick="googleSignIn()">Google Sign In</a></li>
             <li class="sign-out"><a href="#" onclick="signOut()">Sign Out</a></li>
         </ul>
     </div>
     <div class="header">
-        <h2>BLOG - CONOR BAILEY</h2>
+        <h2><a href="./index.html">BLOG - CONOR BAILEY</a></h2>
         <div class="menu-tog">
             <span></span>
             <span></span>
@@ -41,9 +41,18 @@
     </div>
 
     <section class="post-section"></section>
+    <section class="comment-section">
+        <div class="input-section">
+            <form id="comment-form" action="">
+                <textarea id="comment-input" placeholder="Add comment" required rows="5"></textarea>
+                <input type="submit">
+            </form>
 
-    
+            <ul class="comment-list">
 
+            </ul>
+        </div>
+    </section>
 
     <script src="./js/post.js"></script>
 </body>

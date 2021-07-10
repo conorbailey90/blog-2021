@@ -20,7 +20,6 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 });
 
-
 let db = firebase.firestore()
 // console.log(db)
 
@@ -55,6 +54,7 @@ postForm.addEventListener('submit', (e) => {
     let content = postContent.value;
     let video = videoLink.value;
     let image = imageLink.value;
+    let comments = [];
 
     db.collection("posts").add({
         title,
@@ -62,7 +62,8 @@ postForm.addEventListener('submit', (e) => {
         summary,
         content,
         video,
-        image
+        image,
+        comments
     })
     .then((docRef) => {
         console.log("Document written with ID: ", docRef.id);

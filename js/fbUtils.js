@@ -13,6 +13,8 @@
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
 
+    let currentUser;
+
     // Google sign in
 
     function googleSignIn(){
@@ -29,6 +31,7 @@
           // The signed-in user info.
           let user = result.user;
           console.log(user)
+          window.location.reload();
           // ...
       }).catch((error) => {
           // Handle Errors here.
@@ -48,23 +51,29 @@
   function signOut(){
       firebase.auth().signOut().then(() => {
       // Sign-out successful.
+      currentUser = null;
       console.log('Signed out')
-      // window.location.href = 'index.html';
+      window.location.reload()
       }).catch((error) => {
       // An error happened.
       console.log(error)
+
       });
   }
 
+  
   firebase.auth().onAuthStateChanged((user) => {
       if (user) {
           // User is signed in, see docs for a list of available properties
           // https://firebase.google.com/docs/reference/js/firebase.User
           var uid = user.uid;
-     
+          currentUser = user.email;
           console.log(user.displayName)
           document.querySelector('.sign-in').style.display = 'none'
           document.querySelector('.sign-out').style.display = 'block'
+          if(currentUser === 'conbailey90@gmail.com'){
+            document.querySelector('.create-post').style.display = 'block';
+          }
           // ...
       } else {
           // User is signed out
@@ -72,6 +81,7 @@
          
           document.querySelector('.sign-in').style.display = 'block'
           document.querySelector('.sign-out').style.display = 'none'
+          document.querySelector('.create-post').style.display = 'none';
       }
   });
   
